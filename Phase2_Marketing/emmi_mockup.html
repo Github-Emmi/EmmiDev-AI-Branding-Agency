@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmmiDev - AI Branding for the Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'electric-blue': '#0099ff',
+                        'dark-gray': '#1a1a2e',
+                        'light-gray': '#f0f0f5',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 153, 255, 0.2);
+        }
+        
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-white text-dark-gray">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="text-electric-blue">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold tracking-tight">Emmi<span class="text-electric-blue">Dev</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-electric-blue transition-colors">Home</a>
+                <a href="#services" class="hover:text-electric-blue transition-colors">Services</a>
+                <a href="#testimonials" class="hover:text-electric-blue transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-electric-blue transition-colors">Contact</a>
+            </div>
+            
+            <div>
+                <button class="hidden md:block bg-electric-blue hover:bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium transition-all btn-glow">
+                    Get Started
+                </button>
+                <button class="md:hidden text-dark-gray" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white absolute w-full shadow-md" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="hover:text-electric-blue transition-colors py-2">Home</a>
+                <a href="#services" class="hover:text-electric-blue transition-colors py-2">Services</a>
+                <a href="#testimonials" class="hover:text-electric-blue transition-colors py-2">Testimonials</a>
+                <a href="#contact" class="hover:text-electric-blue transition-colors py-2">Contact</a>
+                <button class="bg-electric-blue hover:bg-blue-600 text-white px-5 py-2 rounded-md text-sm font-medium transition-all btn-glow w-full">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-28 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        AI Branding for the <span class="text-electric-blue">Future</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-lg">
+                        We build intelligent fintech solutions that transform businesses and create exceptional digital experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-electric-blue hover:bg-blue-600 text-white px-8 py-3 rounded-md font-medium transition-all btn-glow">
+                            Get Started
+                        </button>
+                        <button class="border border-white hover:border-electric-blue text-white hover:text-electric-blue px-8 py-3 rounded-md font-medium transition-all">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <svg class="w-full max-w-lg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#0099ff;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#0099ff;stop-opacity:0.1" />
+                                </linearGradient>
+                            </defs>
+                            <rect x="50" y="50" width="400" height="300" rx="20" fill="url(#grad1)" stroke="#0099ff" stroke-width="2" />
+                            <circle cx="250" cy="200" r="80" fill="none" stroke="#0099ff" stroke-width="8" stroke-dasharray="50,10" />
+                            <path d="M150,150 L350,250" stroke="#ffffff" stroke-width="3" />
+                            <path d="M150,250 L350,150" stroke="#ffffff" stroke-width="3" />
+                            <circle cx="150" cy="150" r="15" fill="#0099ff" />
+                            <circle cx="350" cy="250" r="15" fill="#0099ff" />
+                            <circle cx="150" cy="250" r="15" fill="#ffffff" />
+                            <circle cx="350" cy="150" r="15" fill="#ffffff" />
+                        </svg>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-dark-gray bg-opacity-80 backdrop-blur-sm p-4 rounded-xl">
+                            <div class="text-electric-blue text-center">
+                                <i class="fas fa-brain text-4xl mb-2"></i>
+                                <p class="text-sm font-medium">AI-Powered Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <p class="text-4xl font-bold text-electric-blue mb-2">98%</p>
+                    <p class="text-dark-gray text-sm">Client Satisfaction</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-4xl font-bold text-electric-blue mb-2">120+</p>
+                    <p class="text-dark-gray text-sm">Projects Completed</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-4xl font-bold text-electric-blue mb-2">15+</p>
+                    <p class="text-dark-gray text-sm">Years Experience</p>
+                </div>
+                <div class="p-6">
+                    <p class="text-4xl font-bold text-electric-blue mb-2">50M+</p>
+                    <p class="text-dark-gray text-sm">Revenue Generated</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-light-gray py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We provide cutting-edge fintech solutions powered by the latest AI technologies to transform your business.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="bg-electric-blue p-6 text-white">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">AI Development</h3>
+                        <p class="text-sm text-blue-100">Custom AI solutions for fintech applications</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Machine Learning Integration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Predictive Analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Natural Language Processing</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-electric-blue hover:text-blue-700 text-sm font-medium flex items-center">
+                            Learn more
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="bg-dark-gray p-6 text-white">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-mobile-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Fintech Apps</h3>
+                        <p class="text-sm text-gray-300">Mobile and web applications for finance</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Payment Processing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Banking Solutions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Investment Platforms</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-electric-blue hover:text-blue-700 text-sm font-medium flex items-center">
+                            Learn more
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="bg-electric-blue p-6 text-white">
+                        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Data Analytics</h3>
+                        <p class="text-sm text-blue-100">Advanced data insights for business growth</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Business Intelligence</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Risk Assessment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-electric-blue mr-2"></i>
+                                <span>Market Trend Analysis</span>
+                            </li>
+                        </ul>
+                        <button class="mt-6 text-electric-blue hover:text-blue-700 text-sm font-medium flex items-center">
+                            Learn more
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Hear from businesses that have transformed their operations with our fintech solutions.</p>
+            </div>
+            
+            <div class="relative">
+                <div class="testimonial-slider flex overflow-x-auto pb-8 hide-scrollbar" id="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
+                        <div class="bg-light-gray rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-electric-blue flex items-center justify-center text-white font-bold text-xl">
+                                    A
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold">Alex Johnson</h4>
+                                    <p class="text-sm text-gray-600">CEO, FinanceHub</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">"EmmiDev transformed our financial services with their AI solutions. Our customer engagement increased by 45% and 
+processing times reduced dramatically."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
+                        <div class="bg-light-gray rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-dark-gray flex items-center justify-center text-white font-bold text-xl">
+                                    S
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold">Sarah Williams</h4>
+                                    <p class="text-sm text-gray-600">CTO, PayTech</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">"The mobile payment solution developed by EmmiDev has been a game-changer for our business. Their team's expertise in 
+fintech is unmatched."</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
+                        <div class="bg-light-gray rounded-xl p-8 h-full">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-electric-blue flex items-center justify-center text-white font-bold text-xl">
+                                    M
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold">Michael Chen</h4>
+                                    <p class="text-sm text-gray-600">Founder, InvestSmart</p>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-700">"EmmiDev's data analytics platform provided insights that helped us make critical business decisions. Their team is 
+responsive and highly professional."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <button id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full shadow-md p-3 text-dark-gray hover:text-electric-blue 
+transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full shadow-md p-3 text-dark-gray hover:text-electric-blue 
+transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots -->
+                <div class="flex justify-center mt-6 space-x-2" id="dots-container">
+                    <button class="w-3 h-3 rounded-full bg-electric-blue" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark-gray text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">Ready to transform your business with our fintech solutions? Contact us today.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-electric-blue mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Address</h4>
+                                <p class="text-gray-300">26 Abiona Akinsanya Close</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-electric-blue mr-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Email</h4>
+                                <p class="text-gray-300">aghason.emmanuel@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="text-electric-blue mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Phone</h4>
+                                <p class="text-gray-300">+234 (811) 207-9469</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-medium mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://x.com/emmi_dev01" class="w-10 h-10 rounded-full bg-electric-blue flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/aghason-emmanuel--ibeabuchi" class="w-10 h-10 rounded-full bg-electric-blue flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Github-Emmi" class="w-10 h-10 rounded-full bg-electric-blue flex items-center justify-center hover:bg-blue-600 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="w-full bg-white bg-opacity-10 border border-gray-600 rounded-md px-4 py-3 focus:outline-none 
+focus:ring-2 focus:ring-electric-blue text-white" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="w-full bg-white bg-opacity-10 border border-gray-600 rounded-md px-4 py-3 focus:outline-none 
+focus:ring-2 focus:ring-electric-blue text-white" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full bg-white bg-opacity-10 border border-gray-600 rounded-md px-4 py-3 focus:outline-none 
+focus:ring-2 focus:ring-electric-blue text-white" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full bg-white bg-opacity-10 border border-gray-600 rounded-md px-4 py-3 focus:outline-none 
+focus:ring-2 focus:ring-electric-blue text-white" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-electric-blue hover:bg-blue-600 text-white px-6 py-3 rounded-md font-medium transition-all btn-glow">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white border-t border-gray-800">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="text-electric-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Emmi<span class="text-electric-blue">Dev</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Transforming businesses with cutting-edge fintech solutions powered by AI.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-electric-blue transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-electric-blue transition-colors">Services</a></li>
+                        <li><a href="#testimonials" class="hover:text-electric-blue transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-electric-blue transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">AI Development</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Fintech Apps</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Data Analytics</a></li>
+                        <li><a href="#" class="hover:text-electric-blue transition-colors">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Subscribe to our newsletter for the latest updates.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-white bg-opacity-10 border border-gray-600 rounded-l-md px-4 py-2 focus:outline-none 
+focus:ring-2 focus:ring-electric-blue text-white flex-grow">
+                        <button type="submit" class="bg-electric-blue hover:bg-blue-600 text-white px-4 py-2 rounded-r-md transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2023 - 2025 EmmiDev. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-electric-blue transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-electric-blue transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-electric-blue transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Testimonial Slider
+        const slider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const dots = document.querySelectorAll('#dots-container button');
+        let currentIndex = 0;
+        
+        function updateSlider() {
+            const slideWidth = slider.querySelector('.testimonial-slide').offsetWidth;
+            slider.scrollTo({
+                left: slideWidth * currentIndex,
+                behavior: 'smooth'
+            });
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.remove('bg-gray-300');
+                    dot.classList.add('bg-electric-blue');
+                } else {
+                    dot.classList.remove('bg-electric-blue');
+                    dot.classList.add('bg-gray-300');
+                }
+            });
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = Math.max(currentIndex - 1, 0);
+            updateSlider();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            const totalSlides = slider.querySelectorAll('.testimonial-slide').length;
+            currentIndex = Math.min(currentIndex + 1, totalSlides - 1);
+            updateSlider();
+        });
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For this demo, we'll just show a success message
+            const formData = new FormData(contactForm);
+            const formValues = Object.fromEntries(formData.entries());
+            
+            // Clear form
+            contactForm.reset();
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for fixed header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var 
+d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96153ef54797ef09',t:'MTc1Mjg3NTk2My4wMDAwMDA='};var 
+a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var 
+a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else 
+if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var 
+e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
